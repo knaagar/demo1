@@ -1,0 +1,377 @@
+[gd_scene format=3 uid="uid://clde6v7takb1i"]
+
+[ext_resource type="Script" uid="uid://birw3vcq1x07n" path="res://scenes/main.gd" id="1_85g3d"]
+[ext_resource type="Script" uid="uid://dxorqtn81x46w" path="res://scripts/player.gd" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://dcfeacpypcsi2" path="res://art/overlays/newspaper1.png" id="2_muem4"]
+[ext_resource type="Texture2D" uid="uid://dghgnuj8grls5" path="res://art/characters/player-idle-animation-fordemoonly19.png" id="2_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://co71dwhn2ei14" path="res://art/overlays/newspaper2.png" id="3_dp3eg"]
+[ext_resource type="Texture2D" uid="uid://d1jv7j750x7y7" path="res://art/characters/player-walk-onlyfordemo19.png" id="3_tefeu"]
+[ext_resource type="Texture2D" uid="uid://cus1s3fmrv5pe" path="res://art/overlays/newspaper3.png" id="4_0ld40"]
+[ext_resource type="Script" uid="uid://c0uxnh8ssvdln" path="res://scenes/interactable.gd" id="4_jyhfs"]
+[ext_resource type="Texture2D" uid="uid://k4yejlciiytn" path="res://art/backgrounds/day2 bg game19.png" id="6_a8y0u"]
+[ext_resource type="Texture2D" uid="uid://4fy4up5vomgq" path="res://art/backgrounds/demo-market-bg.png" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://b18equk7gj2og" path="res://art/backgrounds/day3 bg game19.png" id="7_jkv2x"]
+[ext_resource type="Texture2D" uid="uid://15c6fud8mnwb" path="res://art/backgrounds/demo-market-bg2.png" id="7_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://bqkl3desj0nc5" path="res://art/characters/inn guy game19.png" id="8_ya4ey"]
+[ext_resource type="Texture2D" uid="uid://cp8hchkpdpn41" path="res://art/overlays/newspaper-demo19-2.png" id="9_85g3d"]
+[ext_resource type="Texture2D" uid="uid://fxrg12r2rqnd" path="res://art/overlays/text box game19.png" id="10_choun"]
+[ext_resource type="FontFile" uid="uid://basm8vt2yoqi3" path="res://fonts/Pixelta.ttf" id="13_trceg"]
+[ext_resource type="AudioStream" uid="uid://y0cls0o2dxoq" path="res://audio/freesound_community-spooky-wind-57845.mp3" id="14_muem4"]
+[ext_resource type="AudioStream" uid="uid://bxo10lbqp1s4b" path="res://audio/freesound_community-paper-rustle-81855.mp3" id="18_yc10j"]
+[ext_resource type="AudioStream" uid="uid://dh5ssc4667rwa" path="res://audio/dragon-studio-opening-door-450444.mp3" id="19_jscy8"]
+[ext_resource type="AudioStream" uid="uid://dclui5vme16qi" path="res://audio/dragon-studio-freezing-winter-wind-499654.mp3" id="20_pm3ni"]
+[ext_resource type="AudioStream" uid="uid://dagplcmld3vrg" path="res://audio/dragon-studio-cinematic-braam-463207.mp3" id="21_y6deb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubjdw"]
+size = Vector2(50, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya4ey"]
+atlas = ExtResource("6_tefeu")
+region = Rect2(0, 0, 1070, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eb6dy"]
+atlas = ExtResource("6_tefeu")
+region = Rect2(1070, 0, 1070, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkv2x"]
+atlas = ExtResource("6_a8y0u")
+region = Rect2(0, 0, 1070, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbj1t"]
+atlas = ExtResource("6_a8y0u")
+region = Rect2(1070, 0, 1070, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muem4"]
+atlas = ExtResource("7_jkv2x")
+region = Rect2(0, 0, 1070, 216)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dp3eg"]
+atlas = ExtResource("7_jkv2x")
+region = Rect2(1070, 0, 1070, 216)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ennxa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ya4ey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eb6dy")
+}],
+"loop": 1,
+"name": &"day1",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkv2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbj1t")
+}],
+"loop": 1,
+"name": &"day2",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muem4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dp3eg")
+}],
+"loop": 1,
+"name": &"day3",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_scsq5"]
+size = Vector2(20, 61)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6xl0"]
+atlas = ExtResource("2_tbgi4")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tipki"]
+atlas = ExtResource("2_tbgi4")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85g3d"]
+atlas = ExtResource("3_tefeu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_choun"]
+atlas = ExtResource("3_tefeu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_scsq5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6xl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tipki")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85g3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_choun")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trceg"]
+atlas = ExtResource("8_ya4ey")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8y0u"]
+atlas = ExtResource("8_ya4ey")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e3vtk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trceg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8y0u")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 2.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muem4"]
+bg_color = Color(0.74509805, 0.7921569, 0.85882354, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Main" type="Node2D" unique_id=732973497]
+script = ExtResource("1_85g3d")
+paper_day1 = ExtResource("2_muem4")
+paper_day2 = ExtResource("3_dp3eg")
+paper_day3 = ExtResource("4_0ld40")
+
+[node name="World" type="Node2D" parent="." unique_id=44832169]
+
+[node name="Interactable_Newspaper" type="Area2D" parent="World" unique_id=563566543]
+position = Vector2(200, 0)
+script = ExtResource("4_jyhfs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Interactable_Newspaper" unique_id=308421606]
+position = Vector2(405, 169.5)
+shape = SubResource("RectangleShape2D_ubjdw")
+debug_color = Color(0.72156864, 0.47843137, 0, 0.8627451)
+
+[node name="Interactable_InnGuy" type="Area2D" parent="World" unique_id=775930509]
+position = Vector2(200, 0)
+script = ExtResource("4_jyhfs")
+interact_id = "inn_guy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Interactable_InnGuy" unique_id=638278788]
+position = Vector2(697.5, 163)
+shape = SubResource("RectangleShape2D_ubjdw")
+debug_color = Color(0.72156864, 0.47843137, 0, 0.8627451)
+
+[node name="Interactable_InnDoor" type="Area2D" parent="World" unique_id=1536076525]
+position = Vector2(200, 0)
+script = ExtResource("4_jyhfs")
+interact_id = "inn_door"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Interactable_InnDoor" unique_id=1594226537]
+position = Vector2(739.5, 141.5)
+shape = SubResource("RectangleShape2D_ubjdw")
+debug_color = Color(0.72156864, 0.47843137, 0, 0.8627451)
+
+[node name="Interactable_Bakery" type="Area2D" parent="World" unique_id=127767619]
+position = Vector2(200, 0)
+script = ExtResource("4_jyhfs")
+interact_id = "bakery"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Interactable_Bakery" unique_id=1819853641]
+position = Vector2(-164, 144.5)
+shape = SubResource("RectangleShape2D_ubjdw")
+debug_color = Color(0.72156864, 0.47843137, 0, 0.8627451)
+
+[node name="Background" type="Node2D" parent="World" unique_id=1015417046]
+
+[node name="BackgroundLayer" type="AnimatedSprite2D" parent="World/Background" unique_id=1251347789]
+sprite_frames = SubResource("SpriteFrames_ennxa")
+animation = &"day3"
+autoplay = "day1"
+centered = false
+
+[node name="ForegroundLayer" type="Sprite2D" parent="World/Background" unique_id=1372772987]
+z_index = 2
+texture = ExtResource("7_o6xl0")
+centered = false
+
+[node name="Player" type="CharacterBody2D" parent="World" unique_id=1223779236]
+z_index = 1
+position = Vector2(32, 175)
+script = ExtResource("1_o5qli")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Player" unique_id=744802693]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_scsq5")
+
+[node name="Camera2D" type="Camera2D" parent="World/Player" unique_id=1856174356]
+limit_left = 0
+limit_top = 0
+limit_right = 1070
+limit_bottom = 216
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="World/Player" unique_id=1847063616]
+sprite_frames = SubResource("SpriteFrames_scsq5")
+animation = &"walk"
+
+[node name="InnGuy" type="AnimatedSprite2D" parent="World" unique_id=10230555]
+position = Vector2(897, 162)
+sprite_frames = SubResource("SpriteFrames_e3vtk")
+animation = &"idle"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.722521
+
+[node name="Spawns" type="Node2D" parent="World" unique_id=1193024669]
+
+[node name="BakerySpawn" type="Marker2D" parent="World/Spawns" unique_id=102738781]
+position = Vector2(18, 172)
+
+[node name="InnSpawn" type="Marker2D" parent="World/Spawns" unique_id=1769997863]
+position = Vector2(938, 173)
+
+[node name="StormParticles" type="CPUParticles2D" parent="World" unique_id=511984740]
+position = Vector2(509, -25)
+emitting = false
+amount = 1000
+emission_shape = 3
+emission_rect_extents = Vector2(600, 1)
+direction = Vector2(-1, 1)
+gravity = Vector2(-100, 400)
+initial_velocity_min = 100.0
+initial_velocity_max = 400.0
+scale_amount_max = 2.0
+color = Color(0.93333334, 1, 1, 1)
+
+[node name="WorldModulate" type="CanvasModulate" parent="World" unique_id=777384289]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=212889191]
+position = Vector2(938, 159)
+stream = ExtResource("14_muem4")
+autoplay = true
+
+[node name="Overlays" type="CanvasLayer" parent="." unique_id=1959825222]
+
+[node name="NewspaperOverlay" type="Control" parent="Overlays" unique_id=1779570576]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Overlays/NewspaperOverlay" unique_id=74504005]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_85g3d")
+
+[node name="DialogueBox" type="NinePatchRect" parent="Overlays" unique_id=1184025923]
+offset_left = 121.0
+offset_top = 168.0
+offset_right = 276.0
+offset_bottom = 208.0
+texture = ExtResource("10_choun")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Label" type="Label" parent="Overlays/DialogueBox" unique_id=2116127172]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.049000002
+anchor_top = 0.21800001
+anchor_right = 0.95600003
+anchor_bottom = 0.81000006
+offset_left = 4.4049997
+offset_top = 0.27999973
+offset_right = -5.180008
+offset_bottom = -1.4000015
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.18039216, 0.03529412, 0.023529412, 1)
+theme_override_fonts/font = ExtResource("13_trceg")
+theme_override_font_sizes/font_size = 7
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="FadeScreen" type="ColorRect" parent="Overlays" unique_id=808588443]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="DayText" type="Label" parent="Overlays/FadeScreen" unique_id=1324879330]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("13_trceg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InteractPrompt" type="Label" parent="Overlays" unique_id=1623396984]
+offset_left = 155.0
+offset_top = 201.0
+offset_right = 248.0
+offset_bottom = 211.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("13_trceg")
+theme_override_font_sizes/font_size = 7
+theme_override_styles/normal = SubResource("StyleBoxFlat_muem4")
+text = "Press Space to interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Audio" type="Node" parent="." unique_id=1229201379]
+
+[node name="Paper" type="AudioStreamPlayer2D" parent="Audio" unique_id=737653413]
+stream = ExtResource("18_yc10j")
+
+[node name="Door" type="AudioStreamPlayer2D" parent="Audio" unique_id=1576501217]
+stream = ExtResource("19_jscy8")
+
+[node name="Storm" type="AudioStreamPlayer2D" parent="Audio" unique_id=568925322]
+stream = ExtResource("20_pm3ni")
+
+[node name="Braam" type="AudioStreamPlayer2D" parent="Audio" unique_id=1902519816]
+stream = ExtResource("21_y6deb")
+
+[connection signal="body_entered" from="World/Interactable_Newspaper" to="World/Interactable_Newspaper" method="_on_body_entered"]
+[connection signal="body_exited" from="World/Interactable_Newspaper" to="World/Interactable_Newspaper" method="_on_body_exited"]
+[connection signal="body_entered" from="World/Interactable_InnGuy" to="World/Interactable_InnGuy" method="_on_body_entered"]
+[connection signal="body_exited" from="World/Interactable_InnGuy" to="World/Interactable_InnGuy" method="_on_body_exited"]
+[connection signal="body_entered" from="World/Interactable_InnDoor" to="World/Interactable_InnDoor" method="_on_body_entered"]
+[connection signal="body_exited" from="World/Interactable_InnDoor" to="World/Interactable_InnDoor" method="_on_body_exited"]
+[connection signal="body_entered" from="World/Interactable_Bakery" to="World/Interactable_Bakery" method="_on_body_entered"]
+[connection signal="body_exited" from="World/Interactable_Bakery" to="World/Interactable_Bakery" method="_on_body_exited"]
