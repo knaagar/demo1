@@ -1,2 +1,2 @@
-## A few screenshots of the demo
+## A screenshot from the demo
 ![alt text](image.png)
